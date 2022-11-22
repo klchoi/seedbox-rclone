@@ -3,6 +3,6 @@ function install-rclone
   set -l latest (curl -fsS https://downloads.rclone.org/version.txt)
   if test "$current" != "$latest"
     string match -q -r '(?<v>v.*)' -- $latest
-    install-deb https://downloads.rclone.org/$v/rclone-$v-linux-amd64.deb
+    dpkg -i https://downloads.rclone.org/$v/rclone-$v-linux-amd64.deb
   end
 end
